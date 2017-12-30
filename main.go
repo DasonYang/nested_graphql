@@ -121,7 +121,7 @@ func queryGqlHandler(w http.ResponseWriter, r *http.Request) {
 }
 
 func main() {
-	log.Println("Test with Get      : curl -XPOST -d 'query {get_map{name,address,location,second_layer{uid,type}},get_struct{name,address,location,second_layer{uid,type}}}' http://localhost:8080/api")
+	log.Println("Test with Post      : curl -XPOST -d 'query {get_map{name,address,location,second_layer{uid,type}},get_struct{name,address,location,second_layer{uid,type}}}' http://localhost:8080/api")
 	http.HandleFunc("/api", queryGqlHandler)
 
 	http.ListenAndServe(":8080", nil)
